@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins',serif;
+    box-sizing: border-box;
+}
+
+body{
+
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(rgb(0,0,0,0.8),rgb(0,0,0,0.3));
+    background-size: cover;
+    background-position:center;  /*rgb(0,0,0,0.3),rgb(0,0,0,0.1)) */
+    padding: 0 9%;
+    /*background-image: url("{{url_for('static',filename='image/md1.jpg')}}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;*/
+}
+
+.loginbox{
+    width: 450px;
+    height: 595px;
+    background: linear-gradient(rgb(0,0,0,0.9),rgb(0,0,0,0.1));
+    color: white;
+    top: 50%;
+    left:50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 50px;
+    border-radius: 5px;
+    /* margin-top: 3%; */
+}
+.avatar{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+    top:-50px;
+    left:calc(50% - 50px);
+}
+h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 38px;
+}
+
+.loginbox input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.loginbox input[type="text"], input[type="password"]{
+    border: none;
+    border-bottom: 1px solid whitesmoke;
+    outline: none;
+    height: 40px;
+    background: transparent;
+    color: white;
+    font-size: 18px;
+}
+.loginbox input[type="submit"]{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #214a80;
+    font-size: 19px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    color: white;
+} 
+.loginbox input[type="submit"]:hover{
+    cursor: pointer;
+    background: blue;
+    color: black;
+}
+.msg
+{
+    text-align: center;
+    margin-top: 3%;
+    margin-left: 20%;
+}
+/*p.left{
+    text-align: center;
+}
+.loginbox a{
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 20px;
+    color: burlywood;
+    margin-bottom: 30px;
+}
+.loginbox a:hover{
+    color: cornsilk;
+}*/
+.form-control {
+    background: transparent;
+}

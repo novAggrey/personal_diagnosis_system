@@ -1,0 +1,66 @@
+{% extends 'head.html' %}
+{% block body %}
+
+
+<!-- Breadcrumbs-->
+ <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="home">Home</a>
+  </li>
+</ol>
+
+        <div class="card mb-3">
+              <div class="card-body">
+              
+              <div class="one">
+                  <h1>A List Of Diseases</h1>
+              <br>
+              <div class="row">
+                <div class="col-md-4">
+                <h3>Tuberculosis</h3>
+                <img src= "{{url_for('static', filename='image/tuber.jpg')}}", width="300px", height="250px">
+                      <p>Tuberculosis (TB) is a potentially serious infectious disease that mainly affects the lungs. The bacteria that cause tuberculosis are spread from person to person through tiny droplets released into the air via coughs and sneezes.</p>
+                      <a href="tuberculosis"><button type="button" href="#" class="btn btn-primary">
+                  Tuberculosis</button></a>
+                  </div>
+                  <div class="col-md-4">
+                      <h3>Blood Pressure</h3>
+                      <img src= "{{url_for('static', filename='image/bp.jpg')}}", width="300px", height="250px">
+                      <p>Blood pressure is the pressure of circulating blood against the walls of blood vessels. Most of this pressure results from the heart pumping blood through the circulatory system. When used without qualification, the term "blood pressure" refers to the pressure in the large arteries.</p>
+                  <a href="pressure"><button type="button" href="#" class="btn btn-secondary">
+                  Blood Pressure</button></a>
+              </div>
+                  <div class="col-md-4">
+                      <h3>Diabetes</h3>
+                      <img src= "{{url_for('static', filename='image/diab.jpg')}}", width="300px", height="250px">
+                      <p>Diabetes mellitus, commonly known as diabetes, is a metabolic disease that causes high blood sugar. The hormone insulin moves sugar from the blood into your cells to be stored or used for energy. With diabetes, your body either doesn't make enough insulin or can't effectively use the insulin it does make.</p>
+                  <a href="diabetes"><button type="button" href="#" class="btn btn-success">
+                  Diabetes</button></a>
+              </div></div>
+              </div>
+            </div>
+          </div>
+                      
+              <style>
+                  h1 {
+                    color: green;
+                    text-align: center;
+                  }
+                  div.one {
+                    margin-top: 40px;
+                    text-align: center;
+                  }
+                  button {
+                    margin-top: 10px;
+                  }
+                </style>
+
+              
+              <!--</div>-->
+          <!--</div>-->
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

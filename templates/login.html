@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Diagnosis System</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='login_style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
+    <style type="text/css">
+        body{
+            background-image:url("{{url_for('static',filename='image/dr.jpg')}}");
+            background-repeat: no-repeat;
+            #background-size: cover;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+            <marquee><h1>Personal Diagnosis System</h1> </marquee>
+        <div class="loginbox">
+            <!--<img src="avatar.png" alt="" class="avatar">-->
+            <!--<img src="{{url_for('static',filename='avatar.png')}}" alt="None" class="avatar">-->
+            <h1>Login</h1>
+            <form  method="POST" action="{{url_for('login')}}">
+            <div class="form-group">
+
+                <label class="form-check-label">FULL NAME</label>
+                <input type="text" class="form-control" name="fullname" required>
+
+                <label class="form-check-label">PASSWORD</label>                
+                <input type="password" class="form-control" name="password" required>
+                
+                <input type="submit" name="save" value="Login">
+                <div class="align">
+                    <br>
+                    <label style="margin-left: 16%;">Don't have an account? <a href="register" style="color: red;"> Click here </a> </label>
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

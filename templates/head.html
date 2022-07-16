@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Personal Diagnosis System</title>
+  <!-- Bootstrap core CSS-->
+  <link href="{{url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='slider1.css')}}" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="{{url_for('static',filename='vendor/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+  <!-- Custom styles for this template-->
+  <link href="{{url_for('static',filename='css/sb-admin.css')}}" rel="stylesheet">
+  <style>
+ .card{
+ background-image: url("{{url_for('static',filename='image/back.jpg')}}");
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-attachment: fixed;
+ height: 150vh;
+}
+.map-router{
+  height: 150vh;
+  width: 200vh;
+}
+.range{
+  display: table;
+  position: relative;
+  height: 25px;
+  margin-top: 20px;
+  background-color: rgb(245, 245, 245);
+  background-image: url("{{url_for('static',filename='image/back.jpg')}}");
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+ 
+  </style>
+
+  <script type="text/javascript" src="{{url_for('static',filename='jquery-3.6.0.js')}}"></script>
+</head>
+
+<body class="fixed-nav sticky-footer bg-info" id="page-top">
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-info fixed-top" id="mainNav">
+    <center><a class="navbar-brand" href="home">Personal Diagnosis System</a></center>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Home">
+          <a class="nav-link" href="home">
+            <i class="fa fa-fw fa-home"></i>
+            <span class="nav-link-text">Home</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tuberculosis Diagnosis">
+          <a class="nav-link" href="tuberculosis">
+            <i class="fa fa-fw fa-thermometer"></i>
+            <span class="nav-link-text">Tuberculosis Diagnosis</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Diabetes Diagnosis">
+          <a class="nav-link" href="diabetes">
+            <i class="fa fa-fw fa-thermometer"></i>
+            <span class="nav-link-text">Diabetes Diagnosis</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Pressure Diagnosis">
+          <a class="nav-link" href="pressure">
+            <i class="fa fa-fw fa-thermometer"></i>
+            <span class="nav-link-text">Pressure Diagnosis</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Nearby Hospitals">
+          <a class="nav-link" href="map">
+            <i class="fa fa-fw fa-map-marker"></i>
+            <span class="nav-link-text">Nearby Hospitals</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Nearby Hospitals">
+          <a class="nav-link" href="repo">
+            <i class="fa fa-fw fa-map-marker"></i>
+            <span class="nav-link-text">Publish</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Logout">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-fw fa-sign-out"></i>
+            <span class="nav-link-text">Logout</span>
+            </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <div class="nav-link">
+            <i class="fa fa-fw fa-user"></i>Hellow, User</div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="content-wrapper">
+    <div class="container-fluid">
+{% block body %}
+
+
+
+{% endblock %}
+
+<footer class="sticky-footer">
+<div class="container">
+  <div class="text-center">
+    <small>Copyright © www.mtaki.co.tz 2022</small>
+  </div>
+</div>
+</footer>
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+<i class="fa fa-angle-up"></i>
+</a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="/">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="{{url_for('static',filename='vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{url_for('static',filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="{{url_for('static',filename='vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="{{url_for('static',filename='js/sb-admin.min.js')}}"></script>
+    <script>
+    $('#form').parsley();
+    </script>
+    <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+    </script>
+  </div>
+</body>
+</html>

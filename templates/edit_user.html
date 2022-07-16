@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% block body %}
+  <div class='row'>
+    <div class='col-5 mx-auto'>
+      <h3>Edit user</h3><hr>
+      <form method='post' action='{{url_for("edit_user",user_id=datas.user_id)}}'>
+        <div class='form-group'>
+          <label>User Name</label>
+          <input type='text' name='fullname' required class='form-control' value='{{datas.fullname}}'>
+        </div>
+        <div class='form-group'>
+          <label>Age</label>
+          <input type='number' name='age' required class='form-control' value='{{datas.age}}'>
+        </div>
+        <div class='form-group'>
+          <!-- <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdown" aria-expanded="false">
+              Gender
+            </button>
+            <ul class="dropdown-item" aria-labelby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="#">Male</a></li>
+              <li><a class="dropdown-item" href="#">Female</a></li>
+            </ul> -->
+          <input type='text' name='sex' required class='form-control' value='{{datas.sex}}'>
+        </div>
+      <!-- </div> -->
+        <div class='form-group'>
+          <label>Password</label>
+          <input type='text' name='password' required class='form-control' value='{{datas.password}}'>
+        </div>
+        <input type='submit' value='Submit' class='btn btn-primary'>
+      </form>
+    </div>
+  </div>
+{% endblock %}

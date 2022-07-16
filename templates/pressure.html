@@ -1,0 +1,162 @@
+{% extends 'head.html' %}
+{% block body %}
+
+<!-- Breadcrumbs-->
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+  <label><a href="home">Home</a></label>
+  </li>
+  <li class="breadcrumb-item active" style="color: #17A288;">Pressure Diagnosis</a></li>
+</ol>
+                
+          <!--FOR BP MEASURE-->
+          <div id="BP" class="card mb-3">
+          <form action="{{url_for('press')}}" method="POST" class="form">
+          <div class="row">
+              <div class="offset-md-4 col-lg-6">
+              <div class="row">
+              <center><h1 style="color:blue">PRESSURE DIAGNOSIS FORM</h1></center>
+              
+              <div class="col-lg-12">
+              <label for = "name">GENDER</label>
+              <div class="form-group">
+              <label class = "radio-inline">
+              <input type = "radio" name = "sex"  value="male" id = "optionsRadios3"unchecked required>Male
+              </label>
+              <label class = "radio-inline">
+              <input type = "radio" name = "sex" value="female" id = "optionsRadios4"unchecked required>Female
+               </label>
+               </div>
+               </div>
+
+              <div class="col-lg-12">
+              <div class="range range-primary">
+              <input type="range" name="age" min="1" max="100" value="50" oninput="rangeValue1.innerText=value">AGE</input>
+              <output id="rangeValue1">0</output>
+              </div>
+              </div><br>
+              
+              <div class="col-lg-12">
+              <label for = "name">MARRIED</label>
+              <div class="form-group">
+              <label class = "radio-inline">
+              <input type = "radio" name = "marry" value="yes" id = "optionsRadios3"  unchecked required>Yes
+              </label>
+              <label class = "radio-inline">
+              <input type = "radio" name = "marry" value="no" id = "optionsRadios4" unchecked required>No
+               </label>
+               </div>
+               </div>
+               
+               <div class="col-lg-12">
+               <label for = "name">RESIDENCE</label>
+               <div class="form-group">
+               <label class = "radio-inline">
+               <input type = "radio" name = "area" value="urban" id = "optionsRadios3"  unchecked required>Urban
+               </label>
+               <label class = "radio-inline">
+               <input type = "radio" name = "area" value="rural" id = "optionsRadios4"  unchecked required>Rural
+                </label>
+                </div>
+                </div>
+                
+                <div class="col-lg-12">
+                <div class="range range-info">
+                <input type="range" name="glucose" min="20" max="60" value="50" oninput="rangeValue2.value=value">Glucose</input>
+                <output id="rangeValue2">0</output>
+                </div>
+                </div>
+              
+              <div class="col-lg-12">
+              <div class="range range-info">
+              <input type="range" name="bmi" min="20" max="60" value="50" oninput="rangeValue3.value=value">BMI</input>
+              <output id="rangeValue3">0</output>
+              </div>
+              </div>
+              
+             <div class="col-lg-12">
+             <label for = "name">CIGARATE</label>
+             <div class="form-group">
+             <label class = "radio-inline">
+             <input type = "radio" name = "cig" id = "optionsRadios3" value = "smoked" unchecked required>Smoked
+             </label>
+             <label class = "radio-inline">
+             <input type = "radio" name = "cig" id = "optionsRadios4" value = "never" unchecked required>Never
+              </label>
+              <label class = "radio-inline">
+              <input type = "radio" name = "cig" id = "optionsRadios4" value = "smokes" unchecked required>Smokes
+               </label>
+               <label class = "radio-inline">
+               <input type = "radio" name = "cig" id = "optionsRadios4" value = "unknown" unchecked required>Unknown
+                </label>
+              </div>
+              </div>
+              
+              <div class="col-lg-12">
+              <label for = "name">WORK STATUS</label>
+              <div class="form-group">
+              <label class = "radio-inline">
+              <input type = "radio" name = "emp" id = "optionsRadios4" value = "child" unchecked required>Children
+              </label>
+              <label class = "radio-inline">
+              <input type = "radio" name = "emp" id = "optionsRadios4" value = "gvt" unchecked required>Govt Worker
+               </label>
+               <label class = "radio-inline">
+               <input type = "radio" name = "emp" id = "optionsRadios4" value = "none" unchecked required>None
+                </label>
+                <label class = "radio-inline">
+                <input type = "radio" name = "emp" id = "optionsRadios4" value = "private" unchecked required>Private
+                 </label>
+                 <label class = "radio-inline">
+                 <input type = "radio" name = "emp" id = "optionsRadios4" value = "self" unchecked required>Self Employed
+                  </label>
+               </div>
+               </div>
+
+              <div class="col-lg-12"><br>
+              <div class="form-group col text-center">
+              <button type="submit" class="btn btn-primary ">PREDICT</button>
+              </div>
+              </div>
+
+          </div>
+          <div class="col-lg-6">
+              <div class="offset-md-4 col-lg-6">
+              <div class="row">
+              {% if data == 0 %}
+              <h1 align="center">NORMAL</h1>
+              {% endif %}
+              {% if data == 1 %}
+              <h1>HYPERTENSION</h1>
+              {% endif %}
+              </div>
+              </div>
+                </div>
+                </div>          
+          
+          <style>
+              h1 {
+                color: green;
+                text-align: center;
+              }
+              div.one {
+                margin-top: 40px;
+                text-align: center;
+              }
+              button {
+                margin-top: 10px;
+              }
+            </style>
+            
+          </div>
+          </div>
+          </div>
+          </div>
+              </div>
+          </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

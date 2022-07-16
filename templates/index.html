@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+{% block body %}
+  <p class='text-right'><a href='{{url_for("add_user")}}' class='btn btn-success '>Add User</a></p>
+  <table class='table table-bordered'>
+    <thead>
+      <th>ID</th>
+      <th>Full Name</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Password</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </thead>
+    <tbody>
+      {% for row in datas %}
+        <tr>
+          <th>{{loop.index}}</th>
+          <td>{{row.fullname}}</td>
+          <td>{{row.age}}</td>
+          <td>{{row.sex}}</td>
+          <td>{{row.password}}</td>
+          <td><a href='{{url_for("edit_user",user_id=row.user_id)}}' class='btn btn-primary'>Edit</a></td>
+          <td><a href='{{url_for("delete_user",user_id=row.user_id)}}' class='btn btn-danger' onclick='return confirm("Are You Sure")'>Delete</a></td>
+        </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+{% endblock %}

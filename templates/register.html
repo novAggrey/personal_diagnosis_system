@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Diagnosis System</title>
+    <link href="{{url_for('static',filename='css/bootstrap.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static',filename='registration_style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.js') }}">
+    <style type="text/css">
+        body{
+            background-image:url("{{url_for('static',filename='image/dr.jpg')}}");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="loginbox">
+            <!-- <img src="avatar.png" alt="" class="avatar">
+            <img src="avatar.png" alt="" class="avatar"> -->
+            <h1>Register</h1>
+            <form  method="POST"> 
+            <div class="form-group">
+
+                <label class="form-check-label">FULL NAME</label>      
+                <input class="form-control" type="text" name="fullname" required>
+
+                <label class="form-check-label">AGE</label>
+                <input class="form-control" type="number" name="age" required>
+
+                <label class="form-check-label">PASSWORD</label>
+                <input class="form-control" type="password" name="password" required>
+
+                <label class="form-check-label">GENDER</label>
+                <br><br>
+                <div class="form-check">
+                    Male<input type="radio" class="form-check-input" name="sex" value="male" required></input>
+                    <!--<label class="form-check-label">Male</label>-->
+                </div>
+                <div class="form-check">
+                   Female<input type="radio" class="form-check-input" name="sex" value="female" required></input>
+                    <!--<label class="form-check-label">Female</label></input>-->
+                </div>
+                <br>
+                <input type="submit" name="save" value="Register">
+                <div class="align">
+                    
+                    <label class="rg"> If you're already Registered: <a href="/" style="color:red;">Please click here </a> </label>
+                </div>
+            </div>
+            </form>
+        </div>
+        </div>
+   </div> 
+</body>
+</html>
